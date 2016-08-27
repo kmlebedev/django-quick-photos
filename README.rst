@@ -14,10 +14,9 @@ Configuration
 ---------
 In `settings.py`:
 
-```
+...
 INSTALLED_APPS = (
-    ...
     'mezzanine_quickphotos',
 )
-```
+...
 Configure `INSTAGRAM_CLIENT_ID` and `INSTAGRAM_CLIENT_SECRET` in Mezzanine admin configuration setting
