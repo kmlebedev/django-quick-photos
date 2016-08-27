@@ -9,15 +9,16 @@ with open('README.rst', 'r', 'utf-8') as f:
 
 
 setup(
-    name='django-quick-photos',
-    version='0.2.1',
-    description='Latest Photos from Instagram for Django',
+    name='mezzanine-instagram-quickphotos',
+    version='0.0.1',
+    description='Latest Photos from Instagram for Mezzanine',
     long_description=readme,
-    url='https://github.com/blancltd/django-quick-photos',
+    url='https://github.com/kmlebedev/mezzanine-instagram-quickphotos',
     maintainer='Blanc Ltd',
     maintainer_email='studio@blanc.ltd.uk',
     platforms=['any'],
     install_requires=[
+        'Mezzanine>=4.1.0',
         'python-instagram>=0.8.0',
     ],
     packages=find_packages(),
