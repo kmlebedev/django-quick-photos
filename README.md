@@ -20,3 +20,8 @@ INSTALLED_APPS = (
 )
 ```
 Configure `INSTAGRAM_CLIENT_ID` and `INSTAGRAM_CLIENT_SECRET` in Mezzanine admin configuration setting
+Register site application in https://www.instagram.com/developer/clients/register/ and enable implicit OAuth
+Get ACCESS-TOKEN
+```
+https://api.instagram.com/oauth/authorize/?client_id=CLIENT-ID&redirect_uri=REDIRECT-URI&response_type=token
+```
