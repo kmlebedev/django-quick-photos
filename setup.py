@@ -14,8 +14,8 @@ setup(
     description='Latest Photos from Instagram for Mezzanine',
     long_description=readme,
     url='https://github.com/kmlebedev/mezzanine-instagram-quickphotos',
-    maintainer='Blanc Ltd',
-    maintainer_email='studio@blanc.ltd.uk',
+    maintainer='Konstantin Lebedev',
+    maintainer_email='lebedev.k.m@gmail.com',
     platforms=['any'],
     install_requires=[
         'Mezzanine>=4.1.0',
