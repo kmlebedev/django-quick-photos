@@ -1,22 +1,21 @@
 from django.core.management.base import BaseCommand
 from django.utils.six.moves import input
 from instagram.client import InstagramAPI
-
+from mezzanine.conf import settings
 
 def get_auth_tokens(stdout):
     stdout.write('Please enter the following Instagram client details\n\n')
-    client_id = input('Client ID: ').strip()
-    client_secret = input('Client Secret: ').strip()
-    redirect_uri = input('Redirect URI: ').strip()
-    raw_scope = input(
-        'Requested scope (separated by spaces, blank for just basic read): ').strip()
-    scope = raw_scope.split(' ')
+    print('lol' + settings.INSTAGRAM_CLIENT_ID)
+    if settings.INSTAGRAM_CLIENT_ID == '':
+        settings.INSTAGRAM_CLIENT_ID = input('Client ID: ').strip()
+    if settings.INSTAGRAM_CLIENT_SECRET == '':
+        settings.INSTAGRAM_CLIENT_SECRET = input('Client Secret: ').strip()
+    if settings.INSTAGRAM_REDIRECT_URI == '':
+        settings.INSTAGRAM_REDIRECT_URI = input('Redirect URI: ').strip()
 
-    # For basic, API seems to need to be set explicitly
-    if not scope or scope == ['']:
-        scope = ['basic']
+    scope = ['basic', 'public_content', 'likes']
 
-    api = InstagramAPI(client_id=client_id, client_secret=client_secret, redirect_uri=redirect_uri)
+    api = InstagramAPI(client_id=settings.INSTAGRAM_CLIENT_ID, client_secret=settings.INSTAGRAM_CLIENT_SECRET, redirect_uri=settings.INSTAGRAM_REDIRECT_URI)
     redirect_uri = api.get_authorize_login_url(scope=scope)
 
     stdout.write('\nVisit this page and authorize access in your browser:\n\n%s\n\n' % redirect_uri)

@@ -1,1 +1,1 @@
-default_app_config = 'quickphotos.apps.QuickPhotosConfig'
+default_app_config = 'mezzanine_quickphotos.apps.QuickPhotosConfig'
