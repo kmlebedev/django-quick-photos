@@ -1,9 +1,7 @@
 from mezzanine.conf import settings
 from django.core.management.base import BaseCommand
 from django.db import transaction
-from instagram.client import InstagramAPI
-
-from quickphotos.utils import update_photos
+from mezzanine_quickphotos.utils import update_photos, InstagramAPI
 
 
 @transaction.atomic
@@ -15,7 +13,7 @@ def update_user(user, download):
     if user:
         recent_media, next = api.user_recent_media(user_id=user)
     else:
-        recent_media, next = api.user_media_feed()
+        recent_media, next = api.self_recent_media()
     update_photos(photos=recent_media, download=download)
 
 
