@@ -1,6 +1,6 @@
 from django import template
 
-from quickphotos.models import Photo, Tag
+from mezzanine_quickphotos.models import Photo, Tag
 
 register = template.Library()
 

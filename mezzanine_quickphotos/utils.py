@@ -7,7 +7,16 @@ from PIL import Image
 import requests
 
 from .models import Like, Photo, Tag
+from instagram.client import InstagramAPI as BaseInstagramAPI
+from instagram.bind import bind_method
+from instagram.models import Media
 
+class InstagramAPI(BaseInstagramAPI):
+    self_recent_media = bind_method(
+                path="/users/self/media/recent",
+                accepts_parameters=["count", "max_id",'min_id'],
+                root_class=Media,
+                paginates=True)
 
 def photo_tags(obj, tags):
     for tag in tags:

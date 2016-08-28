@@ -3,13 +3,13 @@ from django.core.management.base import BaseCommand
 from django.db import transaction
 from instagram.client import InstagramAPI
 
-from quickphotos.utils import update_likes
+from mezzanine_quickphotos.utils import update_likes
 
 
 @transaction.atomic
 def update_user_likes(download):
     api = InstagramAPI(
-        access_token=unicode(settings.INSTAGRAM_ACCESS_TOKEN.decode()),
+        access_token=settings.INSTAGRAM_ACCESS_TOKEN.decode(),
         client_secret=settings.INSTAGRAM_CLIENT_SECRET.decode())
 
     # Figure out the logged in user
