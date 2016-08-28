@@ -10,7 +10,7 @@ with open('README.rst', 'r', 'utf-8') as f:
 
 setup(
     name='mezzanine-instagram-quickphotos',
-    version='0.0.1',
+    version='0.0.2',
     description='Latest Photos from Instagram for Mezzanine',
     long_description=readme,
     url='https://github.com/kmlebedev/mezzanine-instagram-quickphotos',
@@ -25,7 +25,7 @@ setup(
     classifiers=[
         'Environment :: Web Environment',
         'Framework :: Django',
-        'Framework :: Django :: 1.8',
+        'Framework :: Django :: 1.10',
         'License :: OSI Approved :: BSD License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
