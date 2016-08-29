@@ -11,7 +11,7 @@ $ pip install mezzanine-instagram-quickphotos
 
 Configuration
 ---------
-In `settings.py`:
+In `settings.py`::
 ```
 INSTALLED_APPS = (
     ...
