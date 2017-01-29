@@ -19,7 +19,7 @@ setup(
     platforms=['any'],
     install_requires=[
         'Mezzanine>=4.1.0',
-        'python-instagram>=0.8.0',
+        'python-instagram-ext>=1.3.5',
     ],
     packages=find_packages(),
     classifiers=[
