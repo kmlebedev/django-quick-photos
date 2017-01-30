@@ -7,8 +7,8 @@ from mezzanine_quickphotos.utils import update_photos, InstagramAPI
 @transaction.atomic
 def update_user(user, download):
     api = InstagramAPI(
-        access_token=settings.INSTAGRAM_ACCESS_TOKEN.decode(),
-        client_secret=settings.INSTAGRAM_CLIENT_SECRET.decode()
+        access_token=settings.INSTAGRAM_ACCESS_TOKEN,
+        client_secret=settings.INSTAGRAM_CLIENT_SECRET
     )
     if user:
         recent_media, next = api.user_recent_media(user_id=user)
